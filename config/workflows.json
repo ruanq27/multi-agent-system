@@ -1,0 +1,70 @@
+{
+  "workflows": [
+    {
+      "name": "standard-support-flow",
+      "description": "Standard customer support workflow",
+      "steps": [
+        "triage",
+        "retrieve-knowledge",
+        "specialist-process",
+        "qa-evaluate",
+        "finalize"
+      ],
+      "parallel": false
+    },
+    {
+      "name": "bulk-query-flow",
+      "description": "Parallel processing of multiple queries",
+      "steps": [
+        "parallel-triage",
+        "parallel-specialist",
+        "parallel-qa",
+        "aggregate-results"
+      ],
+      "parallel": true
+    },
+    {
+      "name": "escalation-flow",
+      "description": "High-risk decision escalation workflow",
+      "steps": [
+        "risk-assessment",
+        "human-approval",
+        "execute-action",
+        "confirmation"
+      ],
+      "parallel": false,
+      "requiresApproval": true
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "high-priority-escalation",
+      "name": "High Priority Escalation",
+      "description": "Escalate high-priority tickets to management",
+      "required": true,
+      "enabled": true
+    },
+    {
+      "id": "customer-refund",
+      "name": "Customer Refund",
+      "description": "Approve refund requests over $100",
+      "required": true,
+      "enabled": true,
+      "threshold": 100
+    },
+    {
+      "id": "policy-exception",
+      "name": "Policy Exception",
+      "description": "Override standard support policies",
+      "required": true,
+      "enabled": true
+    },
+    {
+      "id": "external-escalation",
+      "name": "External Escalation",
+      "description": "Escalate to external teams/services",
+      "required": false,
+      "enabled": true
+    }
+  ]
+}

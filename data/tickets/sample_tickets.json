@@ -1,0 +1,59 @@
+[
+  {
+    "id": "TKT-001",
+    "customerId": "CUST-001",
+    "subject": "Cannot login to account",
+    "description": "I have been unable to login since yesterday. Getting error code 401 when I try to enter my credentials. I've tried resetting my password but still getting the same error.",
+    "status": "open",
+    "priority": "high",
+    "category": "Account",
+    "createdAt": "2026-05-20T08:30:00Z",
+    "updatedAt": "2026-05-20T08:30:00Z"
+  },
+  {
+    "id": "TKT-002",
+    "customerId": "CUST-002",
+    "subject": "Billing discrepancy - double charge",
+    "description": "I was charged twice for my subscription this month. One charge on May 5th and another on May 15th. Please investigate and refund the duplicate charge.",
+    "status": "in_progress",
+    "priority": "high",
+    "category": "Billing",
+    "assignedAgent": "billing-agent",
+    "createdAt": "2026-05-19T15:45:00Z",
+    "updatedAt": "2026-05-20T09:00:00Z"
+  },
+  {
+    "id": "TKT-003",
+    "customerId": "CUST-003",
+    "subject": "API integration failing with error 429",
+    "description": "Our application is getting 429 (Too Many Requests) errors when calling the API. We're not making excessive requests. Can you help troubleshoot?",
+    "status": "open",
+    "priority": "high",
+    "category": "Technical",
+    "createdAt": "2026-05-20T10:15:00Z",
+    "updatedAt": "2026-05-20T10:15:00Z"
+  },
+  {
+    "id": "TKT-004",
+    "customerId": "CUST-004",
+    "subject": "Upgrade from Starter to Professional plan",
+    "description": "I'd like to upgrade my account from Starter to Professional plan. Can you help with the process?",
+    "status": "open",
+    "priority": "low",
+    "category": "Billing",
+    "createdAt": "2026-05-20T11:20:00Z",
+    "updatedAt": "2026-05-20T11:20:00Z"
+  },
+  {
+    "id": "TKT-005",
+    "customerId": "CUST-005",
+    "subject": "How to enable two-factor authentication",
+    "description": "For security purposes, I want to enable two-factor authentication on my account. Where can I find this setting?",
+    "status": "resolved",
+    "priority": "medium",
+    "category": "Account",
+    "assignedAgent": "account-agent",
+    "createdAt": "2026-05-18T14:00:00Z",
+    "updatedAt": "2026-05-19T10:30:00Z"
+  }
+]
