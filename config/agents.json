@@ -5,35 +5,35 @@
       "role": "Ticket Triage Specialist",
       "description": "Routes tickets to appropriate specialists",
       "temperature": 0.5,
-      "model": "gpt-4-turbo-preview"
+      "model": "gpt-4o-mini"
     },
     {
       "name": "technical-agent",
       "role": "Technical Support Specialist",
       "description": "Handles technical issues and API problems",
       "temperature": 0.3,
-      "model": "gpt-4-turbo-preview"
+      "model": "gpt-4o-mini"
     },
     {
       "name": "billing-agent",
       "role": "Billing Specialist",
       "description": "Handles billing, payments, and refunds",
       "temperature": 0.3,
-      "model": "gpt-4-turbo-preview"
+      "model": "gpt-4o-mini"
     },
     {
       "name": "account-agent",
       "role": "Account Support Specialist",
       "description": "Handles account access and security",
       "temperature": 0.4,
-      "model": "gpt-4-turbo-preview"
+      "model": "gpt-4o-mini"
     },
     {
       "name": "qa-agent",
       "role": "Quality Assurance Reviewer",
       "description": "Evaluates response quality and compliance",
       "temperature": 0.5,
-      "model": "gpt-4-turbo-preview"
+      "model": "gpt-4o-mini"
     }
   ]
 }

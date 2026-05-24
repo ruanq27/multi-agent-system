@@ -1,12 +1,9 @@
-import dotenv from 'dotenv';
+import 'dotenv/config';
 import { MemoryManager } from './memory/memory_manager.js';
 import { RAGSystem } from './rag/rag_system.js';
 import { HITLManager } from './hitl/hitl_manager.js';
 import { MultiAgentOrchestrator } from './workflows/orchestrator.js';
 import { LangGraphWorkflow } from './workflows/langgraph_workflow.js';
-
-// Load environment variables
-dotenv.config();
 
 /**
  * Main entry point for the multi-agent customer support system

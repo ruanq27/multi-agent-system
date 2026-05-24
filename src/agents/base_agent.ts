@@ -2,13 +2,17 @@ import { ChatOpenAI } from '@langchain/openai';
 import { SystemMessage, HumanMessage, BaseMessage } from '@langchain/core/messages';
 import { v4 as uuidv4 } from 'uuid';
 
+function resolveModel(model?: string): string {
+  return model || process.env.OPENAI_MODEL || 'gpt-4o-mini';
+}
+
 export interface AgentConfig {
   name: string;
   role: string;
   description: string;
   systemPrompt: string;
   temperature: number;
-  model: string;
+  model?: string;
 }
 
 export interface AgentAction {
@@ -32,7 +36,7 @@ export class SupportAgent {
   constructor(config: AgentConfig) {
     this.config = config;
     this.llm = new ChatOpenAI({
-      modelName: config.model || 'gpt-4-turbo-preview',
+      modelName: resolveModel(config.model),
       temperature: config.temperature || 0.7,
     });
   }
@@ -115,7 +119,6 @@ export class TriageAgent extends SupportAgent {
 
 Always be professional and empathetic. Ask clarifying questions if needed.`,
       temperature: 0.5,
-      model: 'gpt-4-turbo-preview',
     });
   }
 }
@@ -138,7 +141,6 @@ export class TechnicalAgent extends SupportAgent {
 Provide step-by-step solutions. Reference knowledge base when relevant.
 Escalate to human engineers for complex issues.`,
       temperature: 0.3,
-      model: 'gpt-4-turbo-preview',
     });
   }
 }
@@ -161,7 +163,6 @@ export class BillingAgent extends SupportAgent {
 Always verify customer information. Explain charges clearly.
 Escalate refund requests above $500 or policy exceptions to human reviewer.`,
       temperature: 0.3,
-      model: 'gpt-4-turbo-preview',
     });
   }
 }
@@ -184,7 +185,6 @@ export class AccountAgent extends SupportAgent {
 Always verify identity before making changes. Provide security best practices.
 Guide users through self-service options first.`,
       temperature: 0.4,
-      model: 'gpt-4-turbo-preview',
     });
   }
 }
@@ -207,7 +207,6 @@ export class QAAgent extends SupportAgent {
 Rate responses on: accuracy, clarity, empathy, and completeness.
 Provide constructive feedback for improvements.`,
       temperature: 0.5,
-      model: 'gpt-4-turbo-preview',
     });
   }
 }
